@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import time
 import argparse
 
-from data import load_interact_dataset, load_whole_dataset
+from data import load_dataset
 from envs import OfflineEnv
 from recommender import DRRAgent
 
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # ratings_df, users_dict, users_history_lens, movies_id_to_movies = load_whole_dataset(DATA_DIR)
 
     # Loading dataset v2 - interacted items only  
-    ratings_df, users_dict, users_history_lens, movies_id_to_movies = load_interact_dataset(DATA_DIR)
+    ratings_df, users_dict, users_history_lens, movies_id_to_movies = load_dataset(DATA_DIR,'train')
 
     # 6039명의 user, 2819개의 영화
     users_num = max(ratings_df["UserID"])+1
